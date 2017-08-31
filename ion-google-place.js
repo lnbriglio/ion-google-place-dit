@@ -21,8 +21,6 @@ angular.module('ion-google-place', [])
             link: function(scope, element, attrs, ngModel) {
                 var unbindBackButtonAction;
 
-              scope.afterSelect();
-
                 scope.locations = [];
                 var geocoder = new google.maps.Geocoder();
                 var searchEventTimeout = undefined;
@@ -127,7 +125,8 @@ angular.module('ion-google-place', [])
 
                             var req = scope.geocodeOptions || {language:'es',//@TODO: Make country filter and language configurable
                               componentRestrictions: {
-                              country: 'AR'
+                              country: 'AR',
+                                locality: 'locality'
                             }};
                             req.address = query;
                             geocoder.geocode(req, function(results, status) {
