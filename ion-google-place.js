@@ -22,6 +22,7 @@ angular.module('ion-google-place', [])
                     var unbindBackButtonAction;
 
                     console.log(attrs);
+                    console.log("Bower test");
 
                     scope.locations = [];
                     var geocoder = new google.maps.Geocoder();
